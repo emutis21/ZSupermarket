@@ -6,8 +6,8 @@ export async function generateMetadata({ params: { id } }: { params: { id: Produ
   const product = await api.get(id)
 
   return {
-    title: `${product?.product_name} - ZSupermarket`,
-    description: product?.product_description,
+    title: `${product?.productName} - ZSupermarket`,
+    description: product?.productDescription,
   }
 }
 

@@ -6,7 +6,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 //   "stock_quantity": 15,
 //  "price": 2,
 //   "category": "LACTEOS",
-//   "bar_code": "550e8400-e29b-41d4-a716-446655880001",
+//   "barCode": "550e8400-e29b-41d4-a716-446655880001",
 //   "image_url": "https://source.unsplash.com/480x300/?milk&random=10"
 // }
 
@@ -19,12 +19,12 @@ export interface QueryParams {
 }
 
 export interface Product {
-  product_name: string
-  product_description: string
+  productName: string
+  productDescription: string
   category: string
   price: number
-  image_url: string
-  stock_quantity: number
+  imageUrl: string
+  stockQuantity: number
 }
 
 export interface ProductWithId extends Product {
@@ -32,12 +32,12 @@ export interface ProductWithId extends Product {
 }
 
 export interface ProductWithBarCode extends Product {
-  bar_code: ProductBarCode
+  barCode: ProductBarCode
 }
 
 export interface ProductCompleted extends Product {
   id?: ProductId
-  bar_code?: ProductBarCode
+  barCode?: ProductBarCode
 }
 
 interface ProductsState {

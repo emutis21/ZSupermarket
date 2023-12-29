@@ -15,7 +15,7 @@ export const Res = ({ id }: { id: ProductId }) => {
     <>
       <Title>
         <ReturnHome />
-        ZSupermarket - {product?.product_name}
+        ZSupermarket - {product?.productName}
       </Title>
       <article className='relative flex justify-between w-[70%] rounded-xl backdrop-blur-sm text-white bg-clip-border shadow-md mx-auto gap-5'>
         <picture
@@ -26,15 +26,15 @@ export const Res = ({ id }: { id: ProductId }) => {
             <div className='animate-pulse w-full h-full bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600' />
           ) : (
             <img
-              src={product?.image_url}
-              alt={product?.product_name}
+              src={product?.imageUrl}
+              alt={product?.productName}
               className='object-cover object-center w-full h-full transition-all transform hover:scale-110'
             />
           )}
         </picture>
         <div className='p-6 grid gap-2 text-center'>
           <h5 className='mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased'>
-            {product?.product_description} - {product?.stock_quantity} unidades
+            {product?.productDescription} - {product?.stockQuantity} unidades
           </h5>
           <p className='block font-sans text-sm font-light leading-snug tracking-normal text-blue-gray-900 antialiased'>
             <span className='font-bold'>Categoría: </span>
@@ -46,8 +46,8 @@ export const Res = ({ id }: { id: ProductId }) => {
           </p>
           <div className='font-sans text-sm flex flex-col gap-3 font-light leading-snug tracking-normal text-blue-gray-900 antialiased'>
             <div className='flex gap-3'>
-              <Barcode barcode={product?.bar_code} product_name={product?.product_name} />
-              <DeleteButton id={product?.id} product_name={product?.product_name} />
+              <Barcode barcode={product?.barCode} productName={product?.productName} />
+              <DeleteButton id={product?.id} productName={product?.productName} />
             </div>
             {/* <EditButton id={product?.id} /> */}
           </div>

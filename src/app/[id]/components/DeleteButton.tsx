@@ -9,10 +9,10 @@ import { useDeleteProductByIdMutation } from '@/redux/services/productApi'
 
 interface DeleteButtonProps {
   id?: ProductId
-  product_name?: string
+  productName?: string
 }
 
-export const DeleteButton = ({ id, product_name }: DeleteButtonProps) => {
+export const DeleteButton = ({ id, productName }: DeleteButtonProps) => {
   const className =
     'rounded-lg overflow-hidden mx-auto relative w-32 h-10 cursor-pointer flex items-center justify-between border border-red-500 bg-red-500 group hover:bg-red-500 active:bg-red-500 active:border-red-500'
 
@@ -24,10 +24,10 @@ export const DeleteButton = ({ id, product_name }: DeleteButtonProps) => {
 
     toast.promise(promise, {
       loading: `
-        Eliminando ${product_name}
+        Eliminando ${productName}
       `,
       success: () => {
-        return `${product_name} eliminado`
+        return `${productName} eliminado`
       },
       error: 'Error',
     })

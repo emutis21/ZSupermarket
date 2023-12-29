@@ -13,7 +13,7 @@ export default function EditPage({ params: { id } }: { params: { id: ProductId }
     <main className='max-w-[960px] px-5 mx-auto min-h-[calc(100vh-202px)]'>
       <Title>
         <ReturnComponent href={`/${id}`} />
-        Editando {product?.product_name}
+        Editando {product?.productName}
       </Title>
       <EditForm id={id} product={product} isLoading={isLoading} />
     </main>

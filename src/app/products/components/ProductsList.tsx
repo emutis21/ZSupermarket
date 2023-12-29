@@ -10,7 +10,7 @@ export const ProductList = ({ query, currentPage }: { query?: string; currentPag
   const { data: products } = useGetProductsQuery({ page: currentPage, query })
 
   const filteredProducts = products?.filter((product: ProductCompleted) => {
-    return product.product_name.toLowerCase().includes(query?.toLowerCase() || '')
+    return product.productName.toLowerCase().includes(query?.toLowerCase() || '')
   })
 
   return (
@@ -27,17 +27,17 @@ export const ProductList = ({ query, currentPage }: { query?: string; currentPag
               className='relative mx-4 -mt-6 h-60 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600'
             >
               <img
-                src={product.image_url}
-                alt={product.product_name}
+                src={product.imageUrl}
+                alt={product.productName}
                 className='object-cover object-center w-full h-full transition-all transform hover:scale-110'
               />
             </Link>
             <div className='p-6 grid gap-2'>
               <h5 className='mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased'>
-                {product.product_name}
+                {product.productName}
               </h5>
               <p className='block font-sans text-base font-light leading-relaxed text-inherit antialiased'>
-                {product.product_description}
+                {product.productDescription}
               </p>
             </div>
             <div className='p-6 pt-0'>

@@ -22,27 +22,27 @@ export const ProductForm = (props: { id?: number }) => {
     const form = event.target as HTMLFormElement
     const formData = new FormData(form)
 
-    const product_name = formData.get('product_name') as string
-    const product_description = formData.get('product_description') as string
+    const productName = formData.get('productName') as string
+    const productDescription = formData.get('productDescription') as string
     let category = formData.get('category') as string
     const price = Number(formData.get('price'))
-    const image_url = formData.get('image_url') as string
-    const stock_quantity = Number(formData.get('stock_quantity'))
+    const imageUrl = formData.get('imageUrl') as string
+    const stockQuantity = Number(formData.get('stockQuantity'))
 
-    if (!product_name || !product_description || !category || !price || !image_url || !stock_quantity) {
+    if (!productName || !productDescription || !category || !price || !imageUrl || !stockQuantity) {
       return
     }
 
-    const bar_code = crypto.randomUUID()
+    const barCode = crypto.randomUUID()
 
     const newProduct = {
-      product_name,
-      product_description,
+      productName,
+      productDescription,
       category,
       price,
-      image_url,
-      stock_quantity,
-      bar_code,
+      imageUrl,
+      stockQuantity,
+      barCode,
     }
     await addNewProduct(newProduct)
 
@@ -50,11 +50,11 @@ export const ProductForm = (props: { id?: number }) => {
 
     toast.promise(promise, {
       loading: `
-        Creando ${product_name}
+        Creando ${productName}
       `,
       success: () => {
         return `
-          ${product_name} creado
+          ${productName} creado
         `
       },
       error: 'Error',
@@ -70,7 +70,7 @@ export const ProductForm = (props: { id?: number }) => {
       <div className='grid sm:grid-cols-2 [&>*:nth-child(even)]:place-self-end gap-y-10'>
         <Input
           isRequired
-          name='product_name'
+          name='productName'
           type='text'
           label='Nombre'
           placeholder='Arroz Jazmín'
@@ -79,7 +79,7 @@ export const ProductForm = (props: { id?: number }) => {
         />
         <Input
           isRequired
-          name='product_description'
+          name='productDescription'
           type='text'
           label='Descripción'
           placeholder='Arroz Jazmín de grano largo'
@@ -101,13 +101,13 @@ export const ProductForm = (props: { id?: number }) => {
         />
         <Input
           isRequired
-          name='image_url'
+          name='imageUrl'
           type='text'
           label='Imagen'
           placeholder='https://www.supermarket.com/images/arroz-jazmin.jpg'
           className='max-w-xs '
         />
-        <Input isRequired name='stock_quantity' type='number' label='Stock' placeholder='27' className='max-w-xs ' />
+        <Input isRequired name='stockQuantity' type='number' label='Stock' placeholder='27' className='max-w-xs ' />
       </div>
       <AddButton />
       <Toaster richColors expand={true} position='bottom-right' />
