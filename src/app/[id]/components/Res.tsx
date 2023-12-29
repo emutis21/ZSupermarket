@@ -15,7 +15,7 @@ export const Res = ({ id }: { id: ProductId }) => {
     <>
       <Title>
         <ReturnHome />
-        Supermarket - {product?.product_name}
+        ZSupermarket - {product?.product_name}
       </Title>
       <article className='relative flex justify-between w-[70%] rounded-xl backdrop-blur-sm text-white bg-clip-border shadow-md mx-auto gap-5'>
         <picture

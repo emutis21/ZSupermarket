@@ -13,6 +13,11 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 export type ProductId = number
 export type ProductBarCode = string
 
+export interface QueryParams {
+  page?: number
+  query?: string
+}
+
 export interface Product {
   product_name: string
   product_description: string

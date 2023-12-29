@@ -7,10 +7,10 @@ import { Footer } from '@/components/Footer'
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Supermarket',
+  title: 'ZSupermarket',
   description:
-    'Supermarket es una plataforma de comercio electrónico que permite a los usuarios comprar productos de supermercado en línea. Es un proyecto para la materia de programación avanzada',
-  keywords: 'Supermarket, supermercado, ecommerce, nextjs, tailwindcss',
+    'ZSupermarket es una plataforma de comercio electrónico que permite a los usuarios comprar productos de supermercado en línea. Es un proyecto para la materia de programación avanzada',
+  keywords: 'ZSupermarket, supermarket, supermercado, ecommerce, nextjs, tailwindcss',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -4,13 +4,13 @@ import { SearchInput } from './components/SearchInput'
 import Link from 'next/link'
 import { AddIcon } from '@/components/icons/AddIcon'
 
-export default async function page({ searchParams }: { searchParams?: { search?: string; page?: string } }) {
+export default async function page({ searchParams }: { searchParams?: { query?: string; page?: string } }) {
   const currentPage = Number(searchParams?.page) || 1
-  const search = searchParams?.search || ''
+  const query = searchParams?.query || ''
   return (
-    <main className='max-w-[1080px] px-5 mx-auto min-h-[calc(100vh-202px)]'>
+    <div className='max-w-[1080px] px-5 mx-auto min-h-[calc(100vh-202px)]'>
       <header className='text-4xl font-bold mb-12 text-center relative'>
-        <Title>Supermarket</Title>
+        <Title>ZSupermarket</Title>
         <nav className='grid gap-5'>
           <SearchInput />
           <div className='w-full flex justify-end'>
@@ -29,7 +29,7 @@ export default async function page({ searchParams }: { searchParams?: { search?:
           </div>
         </nav>
       </header>
-      <ProductList search={search} currentPage={currentPage} />
-    </main>
+      <ProductList query={query} currentPage={currentPage} />
+    </div>
   )
 }
