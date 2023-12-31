@@ -1,50 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-
-// {
-//   "product_name": "Leche descremada",
-//   "product_description": "Leche descremada deli",
-//   "stock_quantity": 15,
-//  "price": 2,
-//   "category": "LACTEOS",
-//   "barCode": "550e8400-e29b-41d4-a716-446655880001",
-//   "image_url": "https://source.unsplash.com/480x300/?milk&random=10"
-// }
-
-export type ProductId = number
-export type ProductBarCode = string
-
-export interface QueryParams {
-  page?: number
-  query?: string
-}
-
-export interface Product {
-  productName: string
-  productDescription: string
-  category: string
-  price: number
-  imageUrl: string
-  stockQuantity: number
-}
-
-export interface ProductWithId extends Product {
-  id?: ProductId
-}
-
-export interface ProductWithBarCode extends Product {
-  barCode: ProductBarCode
-}
-
-export interface ProductCompleted extends Product {
-  id?: ProductId
-  barCode?: ProductBarCode
-}
-
-interface ProductsState {
-  products: ProductCompleted[]
-  loading: boolean
-  error: string | null
-}
+import { ProductCompleted, ProductId, ProductsState, ProductWithBarCode } from './types'
 
 const initialState: ProductsState = {
   products: [],

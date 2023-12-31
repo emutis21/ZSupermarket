@@ -1,11 +1,5 @@
+import { ModalProps } from '@/redux/features/types'
 import { Button, Modal, useDisclosure } from '@nextui-org/react'
-
-interface ModalProps {
-  children: React.ReactNode
-  title: string
-  className?: string
-  icon?: React.ReactNode
-}
 
 export const ModalComponent = ({ children, title, className, icon }: ModalProps) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()

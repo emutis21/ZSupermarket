@@ -1,10 +1,10 @@
 'use client'
 
 import { Title } from '@/components/Title'
-import { ProductId } from '@/redux/features/productSlice'
 import { useGetProductByIdQuery } from '@/redux/services/productApi'
 import { EditForm } from './components/EditForm'
 import { ReturnComponent } from './components/ReturnComponent'
+import { ProductId } from '@/redux/features/types'
 
 export default function EditPage({ params: { id } }: { params: { id: ProductId } }) {
   const { data: product, isLoading } = useGetProductByIdQuery(id)

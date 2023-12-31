@@ -1,14 +1,10 @@
 'use client'
 
 import { CopyIcon } from '@/components/icons/CopyIcon'
-import { ModalBody, ModalContent, ModalHeader, useDisclosure } from '@nextui-org/react'
+import { ModalBody, ModalContent, ModalHeader } from '@nextui-org/react'
 import { Toaster, toast } from 'sonner'
 import { ModalComponent } from './ModalComponent'
-
-interface BarcodeProps {
-  barcode?: string
-  productName?: string
-}
+import { BarcodeProps } from '@/redux/features/types'
 
 export const Barcode = ({ barcode, productName }: BarcodeProps) => {
   const copyToClipboard = () => {

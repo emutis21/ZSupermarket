@@ -2,11 +2,11 @@
 
 import { ReturnHome } from '@/components/ReturnHome'
 import { Title } from '@/components/Title'
-import { ProductId } from '@/redux/features/productSlice'
 import { useDeleteProductByIdMutation, useGetProductByIdQuery } from '@/redux/services/productApi'
 import { Barcode } from './Barcode'
 import { DeleteButton } from './DeleteButton'
 import { EditButton } from './EditButton'
+import { ProductId } from '@/redux/features/types'
 
 export const Res = ({ id }: { id: ProductId }) => {
   const { data: product, isLoading } = useGetProductByIdQuery(id)

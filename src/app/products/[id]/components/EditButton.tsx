@@ -1,12 +1,9 @@
 'use client'
 
 import { EditIcon } from '@/components/icons/EditIcon'
-import { ProductId } from '@/redux/features/productSlice'
+import { EditButtonProps } from '@/redux/features/types'
 import Link from 'next/link'
 
-interface EditButtonProps {
-  id?: ProductId
-}
 
 export const EditButton = ({ id }: EditButtonProps) => {
   return (

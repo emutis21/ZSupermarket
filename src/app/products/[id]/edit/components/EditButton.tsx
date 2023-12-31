@@ -1,15 +1,12 @@
 'use client'
 
 import { EditIcon } from '@/components/icons/EditIcon'
-import { ProductId } from '@/redux/features/productSlice'
+import { EditButtonProps, ProductId } from '@/redux/features/types'
 import { Button } from '@nextui-org/react'
 
 // ;<EditButton isEdited={props.product === props.product} />
 
-type EditButtonProps = {
-  id?: ProductId
-  isEdited?: boolean
-}
+
 
 export const EditButton = ({ id, isEdited }: EditButtonProps) => {
   // const isEditedProduct = () => {

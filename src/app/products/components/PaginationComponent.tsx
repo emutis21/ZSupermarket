@@ -15,7 +15,7 @@ export const PaginationComponent = ({ currentPage }: { currentPage?: number }) =
     return `${pathname}?${params.toString()}`
   }
 
-  console.log(createPageURL(2))
+  // console.log(createPageURL(2))
 
   return (
     <Pagination
@@ -27,7 +27,9 @@ export const PaginationComponent = ({ currentPage }: { currentPage?: number }) =
       className='self-end'
       onChange={(page) => {
         createPageURL(page)
+        console.log(page)
       }}
+      size='sm'
     />
   )
 }

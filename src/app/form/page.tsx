@@ -1,7 +1,7 @@
 import { ReturnHome } from '@/components/ReturnHome'
 import { Title } from '@/components/Title'
 import { ProductForm } from './components/ProductForm'
-import { ProductId } from '@/redux/features/productSlice'
+import { ProductId } from '@/redux/features/types'
 
 export default async function page({ params: { id } }: { params: { id: ProductId } }) {
 

@@ -1,16 +1,11 @@
 'use client'
 
 import { DeleteIcon } from '@/components/icons/DeleteIcon'
-import { ProductId } from '@/redux/features/productSlice'
 import { ModalComponent } from './ModalComponent'
 import { Toaster, toast } from 'sonner'
 import { Button, ModalBody, ModalContent, ModalHeader } from '@nextui-org/react'
 import { useDeleteProductByIdMutation } from '@/redux/services/productApi'
-
-interface DeleteButtonProps {
-  id?: ProductId
-  productName?: string
-}
+import { DeleteButtonProps, ProductId } from '@/redux/features/types'
 
 export const DeleteButton = ({ id, productName }: DeleteButtonProps) => {
   const className =

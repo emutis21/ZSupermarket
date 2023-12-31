@@ -1,6 +1,6 @@
 import api from '@/api'
 import { Res } from './components/Res'
-import { ProductId } from '@/redux/features/productSlice'
+import { ProductId } from '@/redux/features/types'
 
 export async function generateMetadata({ params: { id } }: { params: { id: ProductId } }) {
   const product = await api.get(id)
