@@ -11,7 +11,6 @@ export const ProductForm = (props: { id?: number }) => {
   const [addNewProduct] = useAddNewProductMutation()
   const [result, setResult] = useState<'ok' | 'ko' | null>(null)
 
-  console.log(props.id)
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 

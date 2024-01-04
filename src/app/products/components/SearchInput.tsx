@@ -10,15 +10,15 @@ export const SearchInput = () => {
   const pathname = usePathname()
   const { replace } = useRouter()
 
-  const handleSeatch = useDebouncedCallback((term: string) => {
+  const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams)
 
+    params.set('page', '1')
     if (term) {
       params.set('query', term)
     } else {
       params.delete('query')
     }
-    params.set('page', '1')
 
     replace(`${pathname}?${params.toString()}`)
   }, WAIT_BETWEEN_CHANGES)
@@ -26,7 +26,7 @@ export const SearchInput = () => {
   return (
     <div className='relative'>
       <input
-        onChange={(e) => handleSeatch(e.target.value)}
+        onChange={(e) => handleSearch(e.target.value)}
         type='search'
         autoFocus
         id='query'

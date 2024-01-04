@@ -1,21 +1,17 @@
 'use client'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ProductCompleted, ProductId, ProductWithBarCode, ProductWithId, QueryParams } from '../features/productSlice'
+import { ProductWithId, ProductCompleted, ProductWithBarCode, ProductId, QueryParams } from '../features/types'
 export const productApi = createApi({
   reducerPath: 'productAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
   endpoints: (builder) => ({
-    getProducts: builder.query<ProductWithId[], QueryParams>({
-      query: ({ page = 1, query = '' }: QueryParams) => `products?page=${page}&query=${query}`,
-      // query: () => '/products',
-      transformResponse: (response: { content: ProductWithId[] }) => response.content,
-    }),
-    getTotalPages: builder.query<number, void>({
-      query: () => '/products',
-      transformResponse: (response: any) => {
-        return response.totalPages || 0
-      },
+    getProducts: builder.query<{ products: ProductWithId[]; totalPages: number }, QueryParams>({
+      query: ({ page = 1, query = '' }: QueryParams) => `products?query=${encodeURIComponent(query)}&page=${page}`,
+      transformResponse: (response: { content: ProductWithId[]; totalPages: number }) => ({
+        products: response.content,
+        totalPages: response.totalPages,
+      }),
     }),
     getProductById: builder.query<ProductCompleted, ProductId>({
       query: (id) => `/products/${id}`,
@@ -46,8 +42,7 @@ export const productApi = createApi({
 export const {
   useGetProductsQuery,
   useGetProductByIdQuery,
-  useGetTotalPagesQuery,
   useDeleteProductByIdMutation,
   useAddNewProductMutation,
-  useEditProductMutation
+  useEditProductMutation,
 } = productApi

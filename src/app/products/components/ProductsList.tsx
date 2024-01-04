@@ -8,11 +8,13 @@ import { MagicMotion } from 'react-magic-motion'
 import { PaginationComponent } from './PaginationComponent'
 
 export const ProductList = ({ query, currentPage }: { query?: string; currentPage?: number }) => {
-  const { data: products } = useGetProductsQuery({ page: currentPage, query })
+  const { data } = useGetProductsQuery({ page: currentPage, query })
 
-  const filteredProducts = products?.filter((product: ProductCompleted) => {
+  const filteredProducts = data?.products.filter((product: ProductCompleted) => {
     return product.productName.toLowerCase().includes(query?.toLowerCase() || '')
   })
+
+  const totalPages = data?.totalPages
 
   return (
     <main className='w-full flex flex-col gap-6 justify-center'>
@@ -56,12 +58,12 @@ export const ProductList = ({ query, currentPage }: { query?: string; currentPag
           ))}
         </section>
       </MagicMotion>
-      {products === undefined ||
+      {data === undefined ||
         (filteredProducts?.length === 0 && (
           <h2 className='text-center text-2xl font-bold text-gray-400'>No se encontraron resultados</h2>
         ))}
       {filteredProducts?.length !== undefined && filteredProducts?.length && (
-        <PaginationComponent currentPage={currentPage} />
+        <PaginationComponent currentPage={currentPage} totalPages={totalPages} />
       )}
     </main>
   )
