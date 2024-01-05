@@ -3,6 +3,7 @@ import { Res } from './components/Res'
 import { ProductId } from '@/redux/features/types'
 
 export async function generateMetadata({ params: { id } }: { params: { id: ProductId } }) {
+  // TODO corregir para no usar el api si no el useGetProductByIdQuery
   const product = await api.get(id)
 
   return {

@@ -1,4 +1,6 @@
-export const categories = [
+import { Category } from '@/redux/features/types';
+
+export const categories: Category[] = [
   {
     id: 1,
     name: 'FRUTAS',

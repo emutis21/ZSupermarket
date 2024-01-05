@@ -1,15 +1,17 @@
 'use client'
 
 import CategoryList from '@/app/form/components/CategoryList'
-import { useAddNewProductMutation, useGetProductByIdQuery, useGetProductsQuery } from '@/redux/services/productApi'
+import { useAddNewProductMutation } from '@/redux/services/productApi'
 import { Input } from '@nextui-org/react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Toaster, toast } from 'sonner'
 import { AddButton } from './AddButton'
+import { useRouter } from 'next/navigation'
 
 export const ProductForm = (props: { id?: number }) => {
   const [addNewProduct] = useAddNewProductMutation()
   const [result, setResult] = useState<'ok' | 'ko' | null>(null)
+  const router = useRouter()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -60,7 +62,7 @@ export const ProductForm = (props: { id?: number }) => {
     })
     promise().then(() => {
       form.reset()
-      window.location.href = '/products'
+      router.push('/products')
     })
   }
 

@@ -22,7 +22,7 @@ export const ProductList = ({ query, currentPage }: { query?: string; currentPag
         <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-20 w-full'>
           {filteredProducts?.map((product) => (
             <article
-              className='relative flex w-full flex-col rounded-xl bg-white/90 backdrop-blur bg-clip-border text-gray-700 shadow-md mx-auto'
+              className='[&>a>img]:hover:scale-110 relative flex w-full flex-col rounded-xl bg-white/90 backdrop-blur bg-clip-border text-gray-700 shadow-md mx-auto'
               key={product.id}
             >
               <Link
@@ -33,7 +33,7 @@ export const ProductList = ({ query, currentPage }: { query?: string; currentPag
                 <img
                   src={product.imageUrl}
                   alt={product.productName}
-                  className='object-cover object-center w-full h-full transition-all transform hover:scale-110'
+                  className='object-cover object-center w-full h-full transition-all transform'
                 />
               </Link>
               <div className='p-6 grid gap-2'>

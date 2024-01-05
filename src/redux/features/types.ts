@@ -55,3 +55,8 @@ export type EditButtonProps = {
 
 export type ProductId = number
 export type ProductBarCode = string
+
+export type Category = {
+  id: number
+  name: string
+}

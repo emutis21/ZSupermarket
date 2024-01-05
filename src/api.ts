@@ -9,7 +9,7 @@
 //   bar_code: string
 // }
 
-import { Product, ProductId } from './redux/features/productSlice'
+import { Product, ProductId } from './redux/features/types'
 
 async function getProducts() {
   const res = await fetch('http://localhost:8080/products')

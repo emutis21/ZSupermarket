@@ -17,7 +17,7 @@ export const Res = ({ id }: { id: ProductId }) => {
         <ReturnHome />
         ZSupermarket - {product?.productName}
       </Title>
-      <article className='relative flex justify-between w-[70%] rounded-xl backdrop-blur-sm text-white bg-clip-border shadow-md mx-auto gap-5'>
+      <article className='transition-all transform [&>picture>img]:hover:scale-110 relative flex justify-between w-[70%] rounded-xl backdrop-blur-sm text-white bg-clip-border shadow-md mx-auto gap-5'>
         <picture
           key={product?.id}
           className='relative my-4 -ml-6 w-80 h-[200px] overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600'
@@ -28,7 +28,7 @@ export const Res = ({ id }: { id: ProductId }) => {
             <img
               src={product?.imageUrl}
               alt={product?.productName}
-              className='object-cover object-center w-full h-full transition-all transform hover:scale-110'
+              className='object-cover object-center w-full h-full transition-all transform'
             />
           )}
         </picture>

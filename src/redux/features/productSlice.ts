@@ -11,6 +11,18 @@ export const productSlide = createSlice({
   name: 'products',
   initialState,
   reducers: {
+    getProducts: (state) => {
+      state.loading = true
+
+      return state
+    },
+    getProductId: (state, action: PayloadAction<ProductId>) => {
+      const id = action.payload
+      const index = state.products.findIndex((product) => product.id === id)
+      if (index !== -1) {
+        state.products[index] = state.products[index]
+      }
+    },
     addNewProduct: (state, action: PayloadAction<ProductWithBarCode>) => {
       state.products.push(action.payload)
     },
@@ -25,10 +37,10 @@ export const productSlide = createSlice({
       if (index !== -1) {
         state.products[index] = product
       }
-    }
+    },
   },
 })
 
 export default productSlide.reducer
 
-export const { addNewProduct, deleteProductById } = productSlide.actions
+export const { getProducts, getProductId, addNewProduct, deleteProductById, editProduct } = productSlide.actions
