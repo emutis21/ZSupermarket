@@ -1,6 +1,6 @@
 'use client'
 
-import { ReturnHome } from '@/components/ReturnHome'
+import { ReturnHome } from '@/components/ReturnButton'
 import { Title } from '@/components/Title'
 import { useDeleteProductByIdMutation, useGetProductByIdQuery } from '@/redux/services/productApi'
 import { Barcode } from './Barcode'
