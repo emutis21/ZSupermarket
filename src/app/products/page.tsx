@@ -15,7 +15,7 @@ export default async function page({ searchParams }: { searchParams?: { query?: 
           <SearchInput />
           <div className='w-full flex justify-end'>
             <Link
-              href='/form'
+              href='/products/new'
               className={`
                 text-end w-fit h-full [&>button]:hover:rotate-90 [&>button>svg]:hover:stroke-white select-none flex items-center gap-2
                 underline justify-end hover:text-white rounded-lg text-blue-500 py-3 align-middle font-sans text-xs font-bold
