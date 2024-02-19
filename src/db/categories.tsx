@@ -2,51 +2,51 @@ import { Category } from '@/redux/features/types';
 
 export const categories: Category[] = [
   {
-    id: 1,
-    name: 'FRUTAS',
+    value: 'FRUTAS',
+    label: 'FRUTAS',
   },
   {
-    id: 2,
-    name: 'VERDURAS',
+    value: 'VERDURAS',
+    label: 'VERDURAS',
   },
   {
-    id: 3,
-    name: 'CARNES',
+    value: 'CARNES',
+    label: 'CARNES',
   },
   {
-    id: 4,
-    name: 'LACTEOS',
+    value: 'LACTEOS',
+    label: 'LACTEOS',
   },
   {
-    id: 5,
-    name: 'PANADERIA',
+    value: 'PANADERIA',
+    label: 'PANADERIA',
   },
   {
-    id: 6,
-    name: 'BEBIDAS',
+    value: 'BEBIDAS',
+    label: 'BEBIDAS',
   },
   {
-    id: 7,
-    name: 'LIMPIEZA',
+    value: 'LIMPIEZA',
+    label: 'LIMPIEZA',
   },
   {
-    id: 8,
-    name: 'PERFUMERIA',
+    value: 'PERFUMERIA',
+    label: 'PERFUMERIA',
   },
   {
-    id: 9,
-    name: 'ALMACEN',
+    value: 'ALMACEN',
+    label: 'ALMACEN',
   },
   {
-    id: 10,
-    name: 'CONGELADOS',
+    value: 'CONGELADOS',
+    label: 'CONGELADOS',
   },
   {
-    id: 11,
-    name: 'MASCOTAS',
+    value: 'MASCOTAS',
+    label: 'MASCOTAS',
   },
   {
-    id: 12,
-    name: 'OTROS',
+    value: 'OTROS',
+    label: 'OTROS',
   },
 ]
