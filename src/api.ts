@@ -1,15 +1,4 @@
-// interface Product {
-//   id: ProductId
-//   product_name: string
-//   product_description: string
-//   category: string
-//   price: number
-//   image_url: string
-//   stock_quantity: number
-//   bar_code: string
-// }
-
-import { Product, ProductId } from './redux/features/types'
+import { Product, ProductId, ProductWithId } from './redux/features/types'
 
 async function getProducts() {
   const res = await fetch('http://localhost:8080/products')
@@ -22,18 +11,14 @@ async function getProducts() {
 }
 
 const api = {
-  list: async (): Promise<Product[]> => {
+  list: async (): Promise<ProductWithId[]> => {
     const products = await getProducts()
 
     return products.content
   },
 
-  get: async (id: ProductId): Promise<Product> => {
-    const res = await fetch(`http://localhost:8080/products/${id}`)
-
-    if (!res.ok) {
-      throw new Error('Error al obtener el producto')
-    }
+  get: async (id: ProductId): Promise<ProductWithId> => {
+    const res = await fetch(`http://localhost:8080/products/${id}`, { cache: 'no-store' })
 
     return res.json()
   },

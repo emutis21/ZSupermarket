@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { categories } from '../db/categories'
 import { Category } from '@/redux/features/types'
 
-const categoryNames = categories.map((cat: Category) => cat.name) as unknown as [string, ...string[]]
+const categoryNames = categories.map((cat: Category) => cat.label) as unknown as [string, ...string[]]
 
 export const formSchema = z.object({
   productName: z.string().min(3, { message: 'El nombre del producto debe tener al menos 3 caracteres' }).max(25, {

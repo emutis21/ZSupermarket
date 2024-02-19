@@ -1,7 +1,7 @@
 'use client'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ProductWithId, ProductCompleted, ProductWithBarCode, ProductId, QueryParams } from '../features/types'
+import { ProductCompleted, ProductId, ProductWithBarCode, ProductWithId, QueryParams } from '../features/types'
 export const productApi = createApi({
   reducerPath: 'productAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
@@ -29,9 +29,9 @@ export const productApi = createApi({
         body: product,
       }),
     }),
-    editProduct: builder.mutation<ProductWithId, ProductWithId>({
+    editProduct: builder.mutation<ProductWithId, Partial<ProductWithId>>({
       query: (product) => ({
-        url: `/products/${product.id}`,
+        url: `/products`,
         method: 'PUT',
         body: product,
       }),
@@ -44,5 +44,5 @@ export const {
   useGetProductByIdQuery,
   useDeleteProductByIdMutation,
   useAddNewProductMutation,
-  useEditProductMutation
+  useEditProductMutation,
 } = productApi
