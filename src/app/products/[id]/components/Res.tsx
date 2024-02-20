@@ -1,10 +1,10 @@
 'use client'
 
-import { ReturnButton } from '@/components/ReturnButton'
-import { Title } from '@/components/Title'
+import { ReturnButton } from '@/components/ui/ReturnButton'
+import { Title } from '@/components/ui/Title'
 import { ProductId } from '@/redux/features/types'
 import { useGetProductByIdQuery } from '@/redux/services/productApi'
-import { EditButton } from '@/components/EditButton'
+import { EditButton } from '@/components/ui/EditButton'
 import { Barcode } from './Barcode'
 import { DeleteButton } from './DeleteButton'
 import Image from 'next/image'

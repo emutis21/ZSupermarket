@@ -1,5 +1,5 @@
-import { ReturnButton } from '@/components/ReturnButton'
-import { Title } from '@/components/Title'
+import { ReturnButton } from '@/components/ui/ReturnButton'
+import { Title } from '@/components/ui/Title'
 import { ProductForm } from './components/ProductForm'
 import { ProductId } from '@/redux/features/types'
 

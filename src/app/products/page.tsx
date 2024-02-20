@@ -1,4 +1,4 @@
-import { Title } from '@/components/Title'
+import { Title } from '@/components/ui/Title'
 import { ProductList } from './components/ProductsList'
 import { SearchInput } from './components/SearchInput'
 import Link from 'next/link'

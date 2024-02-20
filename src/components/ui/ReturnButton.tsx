@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ReturnIcon } from './icons/ReturnIcon'
+import { ReturnIcon } from '../icons/ReturnIcon'
 
 export const ReturnButton = ({ id }: { id?: number }) => {
   const goBack = id ? `/products/${id}` : '/products'

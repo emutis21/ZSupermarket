@@ -12,7 +12,7 @@ import { Toaster, toast } from 'sonner'
 import { AddButton } from './AddButton'
 import { useRouter } from 'next/navigation'
 import { Product } from '@/redux/features/types'
-import { EditButton } from '@/components/EditButton'
+import { EditButton } from '@/components/ui/EditButton'
 import { skipToken } from '@reduxjs/toolkit/query/react'
 
 export const ProductForm = ({ id }: { id?: number }) => {
