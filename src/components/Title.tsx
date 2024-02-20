@@ -6,14 +6,15 @@ export const Title = ({ children }: TitleProps) => {
   return (
     <h1
       className='
-        relative
         w-full
-        justify-center
-        gap-3
-        py-16
+        gap-2
+        py-8
         text-center
-        text-4xl
+        text-3xl
         font-bold
+        md:gap-3
+        md:py-16
+        md:text-4xl
       '
     >
       {children}
