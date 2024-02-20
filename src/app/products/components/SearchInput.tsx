@@ -1,5 +1,6 @@
 'use client'
 
+import { SearchIcon } from '@/components/icons/SearchIcon'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 
@@ -42,20 +43,7 @@ export const SearchInput = () => {
           aria-label='Submit'
           className='flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-900 text-white transition hover:bg-neutral-800'
         >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='w-8'
-            viewBox='0 0 24 24'
-            strokeWidth='2'
-            stroke='currentColor'
-            fill='none'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          >
-            <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-            <path d='M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0' />
-            <path d='M21 21l-6 -6' />
-          </svg>
+          <SearchIcon />
         </button>
       </div>
     </div>
