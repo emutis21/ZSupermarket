@@ -7,6 +7,7 @@ import { useGetProductByIdQuery } from '@/redux/services/productApi'
 import { EditButton } from '@/components/EditButton'
 import { Barcode } from './Barcode'
 import { DeleteButton } from './DeleteButton'
+import Image from 'next/image'
 
 export const Res = ({ id }: { id: ProductId }) => {
   const { data: product, isLoading } = useGetProductByIdQuery(id, {
@@ -29,9 +30,9 @@ export const Res = ({ id }: { id: ProductId }) => {
           {isLoading ? (
             <div className="bg-blue-gray-500 shadow-blue-gray-500/40 h-full w-full animate-pulse bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-border text-white shadow-lg" />
           ) : (
-            <img
-              src={imageUrl}
-              alt={productName}
+            <Image
+              src={imageUrl!}
+              alt={productName!}
               className="h-full w-full transform object-cover object-center transition-all"
             />
           )}
