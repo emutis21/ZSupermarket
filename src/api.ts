@@ -27,9 +27,9 @@ const api = {
     const res = await fetch('http://localhost:8080/products', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(product),
+      body: JSON.stringify(product)
     })
 
     if (!res.ok) {
@@ -43,9 +43,9 @@ const api = {
     const res = await fetch('http://localhost:8080/products', {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(product),
+      body: JSON.stringify(product)
     })
 
     if (!res.ok) {
@@ -57,13 +57,13 @@ const api = {
 
   delete: async (id: ProductId): Promise<void> => {
     const res = await fetch(`http://localhost:8080/products/${id}`, {
-      method: 'DELETE',
+      method: 'DELETE'
     })
 
     if (!res.ok) {
       throw new Error('Error al eliminar el producto')
     }
-  },
+  }
 }
 
 export default api

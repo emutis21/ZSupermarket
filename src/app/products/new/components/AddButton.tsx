@@ -1,10 +1,10 @@
 export const AddButton = () => {
   return (
-    <button className='rounded-lg self-center overflow-hidden relative w-36 h-10 cursor-pointer flex items-center border border-blue-500 bg-blue-500 group hover:bg-blue-500 active:bg-blue-500 active:border-blue-500'>
-      <span className='text-gray-200 font-semibold text-lg ml-8 transform group-hover:translate-x-20 transition-all duration-300'>
+    <button className='group relative flex h-10 w-36 cursor-pointer items-center self-center overflow-hidden rounded-lg border border-blue-500 bg-blue-500 hover:bg-blue-500 active:border-blue-500 active:bg-blue-500'>
+      <span className='ml-8 transform text-lg font-semibold text-gray-200 transition-all duration-300 group-hover:translate-x-20'>
         Añadir
       </span>
-      <span className='absolute right-0 h-full w-10 rounded-lg bg-blue-500 hover:bg-blue-800 active:bg-blue-600 flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300'>
+      <span className='absolute right-0 flex h-full w-10 transform items-center justify-center rounded-lg bg-blue-500 transition-all duration-300 hover:bg-blue-800 active:bg-blue-600 group-hover:w-full group-hover:translate-x-0'>
         <svg
           className='svg w-8 text-white'
           fill='none'

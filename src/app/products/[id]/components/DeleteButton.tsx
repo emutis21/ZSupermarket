@@ -24,7 +24,7 @@ export const DeleteButton = ({ id, productName }: DeleteButtonProps) => {
       success: () => {
         return `${productName} eliminado`
       },
-      error: 'Error',
+      error: 'Error'
     })
     promise().then(() => {
       window.location.href = '/products'
@@ -35,20 +35,22 @@ export const DeleteButton = ({ id, productName }: DeleteButtonProps) => {
     <ModalComponent title='Eliminar' className={className} icon={<DeleteIcon />}>
       <ModalContent>
         {(onClose) => (
-          <div className='bg-zinc-800 flex flex-col pt-7 pb-5 px-5'>
+          <div className='flex flex-col bg-zinc-800 px-5 pb-5 pt-7'>
             <Toaster richColors expand={true} position='top-center' />
 
-            <ModalHeader className='text-center'>¿Estás seguro de eliminar este producto? </ModalHeader>
+            <ModalHeader className='text-center'>
+              ¿Estás seguro de eliminar este producto?{' '}
+            </ModalHeader>
 
-            <ModalBody className='flex gap-2 flex-row justify-end items-center w-full content-end'>
+            <ModalBody className='flex w-full flex-row content-end items-center justify-end gap-2'>
               <Button
-                className='h-full bg-transparent items-center justify-center hover:underline w-fit px-3 self-end text-center align-middle font-sans text-xs font-semibold py-2 uppercase transition-all focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+                className='h-full w-fit items-center justify-center self-end bg-transparent px-3 py-2 text-center align-middle font-sans text-xs font-semibold uppercase transition-all hover:underline focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
                 onPress={onClose}
               >
                 Cancelar
               </Button>
               <button
-                className='bg-slate-900/40 flex rounded-md hover:text-red-500 text-white border-none outline-none gap-2 [&>svg]:stroke-red-500 items-center justify-center w-fit py-2 px-3 self-end text-center align-middle font-sans text-xs font-semibold uppercase transition-all focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+                className='flex w-fit items-center justify-center gap-2 self-end rounded-md border-none bg-slate-900/40 px-3 py-2 text-center align-middle font-sans text-xs font-semibold uppercase text-white outline-none transition-all hover:text-red-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none [&>svg]:stroke-red-500'
                 onClick={() => {
                   id && handleDelete(id)
                 }}

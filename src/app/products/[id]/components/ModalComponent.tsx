@@ -8,14 +8,14 @@ export const ModalComponent = ({ children, title, className, icon }: ModalProps)
     <>
       <Button className={className} onPress={onOpen}>
         {icon ? (
-          <span className='text-gray-200 font-semibold transform group-hover:translate-x-20 transition-all duration-300'>
+          <span className='transform font-semibold text-gray-200 transition-all duration-300 group-hover:translate-x-20'>
             {title}
           </span>
         ) : (
           title
         )}
         {icon && (
-          <span className='absolute right-0 h-full w-10 rounded-lg bg-red-500 hover:bg-red-800 active:bg-red-600 flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300'>
+          <span className='absolute right-0 flex h-full w-10 transform items-center justify-center rounded-lg bg-red-500 transition-all duration-300 hover:bg-red-800 active:bg-red-600 group-hover:w-full group-hover:translate-x-0'>
             {icon}
           </span>
         )}
@@ -25,7 +25,8 @@ export const ModalComponent = ({ children, title, className, icon }: ModalProps)
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         classNames={{
-          backdrop: 'bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20 overflow-hidden',
+          backdrop:
+            'bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20 overflow-hidden'
         }}
       >
         {children}

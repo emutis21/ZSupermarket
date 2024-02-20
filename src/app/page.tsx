@@ -1,16 +1,12 @@
 import Link from 'next/link'
 
 export default async function Home() {
-
   return (
-    <main className='max-w-[960px] px-5 mx-auto grid place-content-center min-h-[calc(100vh-202px)]'>
-      <h1 className='text-4xl font-bold mb-12 text-center relative'>
-        Bienvenidos a<span className='text-blue-500 block text-5xl'>ZSupermarket</span>
+    <main className='mx-auto grid min-h-[calc(100vh-202px)] max-w-[960px] place-content-center px-5'>
+      <h1 className='relative mb-12 text-center text-4xl font-bold'>
+        Bienvenidos a<span className='block text-5xl text-blue-500'>ZSupermarket</span>
       </h1>
-      <Link
-        href={`/products`}
-        className='w-full h-full hover:text-blue-500 text-center'
-      >
+      <Link href={`/products`} className='h-full w-full text-center hover:text-blue-500'>
         Ver productos
       </Link>
     </main>

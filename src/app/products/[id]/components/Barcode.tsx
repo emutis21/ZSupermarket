@@ -19,13 +19,15 @@ export const Barcode = ({ barcode, productName }: BarcodeProps) => {
     <ModalComponent title='Ver códio de barras' className={className}>
       <ModalContent>
         {() => (
-          <div className='bg-zinc-800 pt-7 pb-5 px-5'>
+          <div className='bg-zinc-800 px-5 pb-5 pt-7'>
             <Toaster richColors expand={true} position='top-center' />
 
-            <ModalHeader className='flex flex-col gap-1 text-center'>Código de barras de {productName}</ModalHeader>
+            <ModalHeader className='flex flex-col gap-1 text-center'>
+              Código de barras de {productName}
+            </ModalHeader>
             <ModalBody className='mb-3'>
               <button
-                className='flex border-purple-700 hover:bg-purple-950 border-4 rounded-md gap-2 items-center justify-center w-full py-3 px-6 text-center align-middle font-sans text-xs font-semibold uppercase shadow-md transition-all focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+                className='flex w-full items-center justify-center gap-2 rounded-md border-4 border-purple-700 px-6 py-3 text-center align-middle font-sans text-xs font-semibold uppercase shadow-md transition-all hover:bg-purple-950 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
                 onClick={copyToClipboard}
               >
                 <CopyIcon />

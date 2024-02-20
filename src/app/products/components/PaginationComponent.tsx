@@ -4,7 +4,13 @@ import { Pagination } from '@nextui-org/react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 
-export const PaginationComponent = ({ currentPage, totalPages }: { currentPage?: number; totalPages?: number }) => {
+export const PaginationComponent = ({
+  currentPage,
+  totalPages
+}: {
+  currentPage?: number
+  totalPages?: number
+}) => {
   const [page, setPage] = useState(currentPage || 1)
   const pathname = usePathname()
   const router = useRouter()

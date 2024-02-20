@@ -4,7 +4,7 @@ import { ProductCompleted, ProductId, ProductsState, ProductWithBarCode } from '
 const initialState: ProductsState = {
   products: [],
   loading: false,
-  error: null,
+  error: null
 }
 
 export const productSlide = createSlice({
@@ -37,10 +37,11 @@ export const productSlide = createSlice({
       if (index !== -1) {
         state.products[index] = product
       }
-    },
-  },
+    }
+  }
 })
 
 export default productSlide.reducer
 
-export const { getProducts, getProductId, addNewProduct, deleteProductById, editProduct } = productSlide.actions
+export const { getProducts, getProductId, addNewProduct, deleteProductById, editProduct } =
+  productSlide.actions

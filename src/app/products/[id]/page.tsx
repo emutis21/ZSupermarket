@@ -12,7 +12,10 @@ type Props = {
   }
 }
 
-export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const id = params.id
   const product = await api.get(id)
 
@@ -28,11 +31,11 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
           url: product?.imageUrl,
           width: 800,
           height: 600,
-          alt: product?.productName,
+          alt: product?.productName
         },
-        ...previousImage,
-      ],
-    },
+        ...previousImage
+      ]
+    }
   }
 }
 
@@ -40,7 +43,7 @@ export async function generateStaticParams() {
   const product = await api.list()
 
   return product.map((product) => ({
-    id: product.id?.toString(),
+    id: product.id?.toString()
   }))
 }
 

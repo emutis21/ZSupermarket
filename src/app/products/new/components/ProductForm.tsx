@@ -1,7 +1,11 @@
 'use client'
 
 import CategoryList from '@/app/products/new/components/CategoryList'
-import { useAddNewProductMutation, useEditProductMutation, useGetProductByIdQuery } from '@/redux/services/productApi'
+import {
+  useAddNewProductMutation,
+  useEditProductMutation,
+  useGetProductByIdQuery
+} from '@/redux/services/productApi'
 import { Input } from '@nextui-org/react'
 import { useEffect, useRef, useState } from 'react'
 import { Toaster, toast } from 'sonner'
@@ -26,11 +30,12 @@ export const ProductForm = ({ id }: { id?: number }) => {
     category: '',
     price: 0,
     imageUrl: '',
-    stockQuantity: 0,
+    stockQuantity: 0
   })
 
   const initialProduct = useRef(product)
-  const { productName, productDescription, category, price, imageUrl, stockQuantity } = product || {}
+  const { productName, productDescription, category, price, imageUrl, stockQuantity } =
+    product || {}
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -60,13 +65,13 @@ export const ProductForm = ({ id }: { id?: number }) => {
           category: '',
           price: 0,
           imageUrl: '',
-          stockQuantity: 0,
+          stockQuantity: 0
         }
       }
 
       const updatedProduct = {
         ...prevProduct,
-        [name]: name === 'price' || name === 'stockQuantity' ? Number(value) : value,
+        [name]: name === 'price' || name === 'stockQuantity' ? Number(value) : value
       }
 
       setIsEdited(JSON.stringify(updatedProduct) !== JSON.stringify(initialProduct.current))
@@ -106,10 +111,14 @@ export const ProductForm = ({ id }: { id?: number }) => {
       price,
       imageUrl,
       stockQuantity,
-      barCode,
+      barCode
     }
 
-    const handleProduct = async (id: number | undefined, changedFields: object | undefined, newProduct: any) => {
+    const handleProduct = async (
+      id: number | undefined,
+      changedFields: object | undefined,
+      newProduct: any
+    ) => {
       try {
         await promise()
 
@@ -139,15 +148,15 @@ export const ProductForm = ({ id }: { id?: number }) => {
     toast.promise(handleProduct(id, changedFields, newProduct), {
       loading: `Procesando ${productName}...`,
       success: (message) => message,
-      error: (message) => `${message}`,
+      error: (message) => `${message}`
     })
 
     handleProduct(id, changedFields, newProduct)
   }
 
   return (
-    <form className='w-full mt-24 flex flex-col gap-y-16' onSubmit={handleSubmit}>
-      <div className='grid sm:grid-cols-2 [&>*:nth-child(even)]:place-self-end gap-y-10'>
+    <form className='mt-24 flex w-full flex-col gap-y-16' onSubmit={handleSubmit}>
+      <div className='grid gap-y-10 sm:grid-cols-2 [&>*:nth-child(even)]:place-self-end'>
         <Input
           isRequired
           name='productName'
@@ -177,7 +186,7 @@ export const ProductForm = ({ id }: { id?: number }) => {
           type='number'
           startContent={
             <div className='pointer-events-none flex items-center'>
-              <span className='text-default-400 text-small'>$</span>
+              <span className='text-small text-default-400'>$</span>
             </div>
           }
           label='Precio'
